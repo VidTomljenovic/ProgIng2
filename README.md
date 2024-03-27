@@ -24,8 +24,7 @@ Prema zahtjevima tvrtke, aplikacija MyDoc trebala bi zadovoljiti specifikacije p
 Kako bi korisnik išta od navedenog mogao koristiti mora biti prijavljen u aplikaciju, a to će postići samo ako se prethodno registrirao. Kako bi se mogao ipostaviti račun i iste fakturirati, potrebno je uvesti i dodatnog posebnog korisnika kao administratora.
 
 ## Zadatak
-(U root repozitorija učitajte zadatak koji ste dobili i potom ovdje stavite link na njegovo otvaranje!)
-
+[Korisnički zahtjevi - Softver za osobnu telemedicinu.pdf](https://github.com/foivz/pi2024-zadace-VidTomljenovic/blob/master/Korisni%C4%8Dki zahtjevi - Softver za osobnu telemedicinu.pdf)
 
 ## Resursi
 (Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)

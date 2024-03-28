@@ -19,9 +19,9 @@ Specifikacija | Naziv | Opis | Zadužen
 S01 | Registracija i prijava korisnika | opis1 | Vid Tomljenović
 S02 | Prijava administratora | opis2 | Vid Tomljenović
 S03 | Mogućnost odabira paketa, uvid i korištenje njegovih usluga | opis3 | Vid Tomljenović
-S04 | lorem | opis4 | Vid Tomljenović
-S05 | lorem | opis5 | Vid Tomljenović
-S06 | lorem | opis6 | Vid Tomljenović
+S04 | Odabir termina i održavanje konzultacija s med. osobom | opis4 | Vid Tomljenović
+S05 | Mogućnost ugovaranja dolaska med. osobe na adresu | opis5 | Vid Tomljenović
+S06 | Pregled plaćenih usluga, ispostava računa | opis6 | Vid Tomljenović
 
 ## Zadatak
 [Korisnički zahtjevi - Softver za osobnu telemedicinu.pdf](https://github.com/foivz/pi2024-zadace-VidTomljenovic/blob/master/Korisni%C4%8Dki%20zahtjevi%20-%20Softver%20za%20osobnu%20telemedicinu.pdf)

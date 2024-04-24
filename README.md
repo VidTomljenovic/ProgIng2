@@ -14,19 +14,10 @@ Pružanje medicinskih usluga putem i koristeći ICT, u obliku stolne aplikacije 
 Prema zahtjevima tvrtke, aplikacija MyDoc trebala bi zadovoljiti specifikacije poput dostupnosti za stolne uređaje (MyDoc bi trebala biti desktop aplikacija), korisnicima bi morala moći omogućiti zakazivanje online konzultacija s liječnicima opće prakse ili drugim medicinski osposobljenim osobama gdje takve i ostale usluge zajedno tvore pakete usluga koje isti korisnik može izabrati. Također jedna od specifičnih specifikacija jest mogućnost korisnika da zatraži mobilno vađenje krvi odnosno dolazak osposobljene osobe na njegovu adresu. 
 Kako bi korisnik išta od navedenog mogao koristiti mora biti prijavljen u aplikaciju, a to će postići samo ako se prethodno registrirao. Kako bi se mogao ipostaviti račun i iste fakturirati, potrebno je uvesti i dodatnog posebnog korisnika kao administratora.
 
-Specifikacija | Naziv | Opis | Zadužen
-------------  | ------------------- | ----- | ---------------------
-S01 | Registracija i prijava korisnika | opis1 | Vid Tomljenović
-S02 | Prijava administratora | opis2 | Vid Tomljenović
-S03 | Mogućnost odabira paketa, uvid i korištenje njegovih usluga | opis3 | Vid Tomljenović
-S04 | Odabir termina i održavanje konzultacija s med. osobom | opis4 | Vid Tomljenović
-S05 | Mogućnost ugovaranja dolaska med. osobe na adresu | opis5 | Vid Tomljenović
-S06 | Pregled plaćenih usluga, ispostava računa | opis6 | Vid Tomljenović
-
 ## Zadatak
 [Korisnički zahtjevi - Softver za osobnu telemedicinu.pdf](https://github.com/foivz/pi2024-zadace-VidTomljenovic/blob/master/Korisni%C4%8Dki%20zahtjevi%20-%20Softver%20za%20osobnu%20telemedicinu.pdf)
 
 ## Resursi
-(Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)
+(ovdje ce ici link na wiki doc)
 
 Svi resursi nalaze se u mapi _Documentation_.

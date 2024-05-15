@@ -20,7 +20,7 @@ Kako bi korisnik išta od navedenog mogao koristiti mora biti prijavljen u aplik
 ## Resursi
 [Wiki](https://github.com/foivz/pi2024-zadace-VidTomljenovic/wiki)
 
-[Projektna dokumentacija](https://github.com/foivz/pi2024-zadace-VidTomljenovic/wiki/Projektna-dokumentacija)
+[Projektna dokumentacija](https://github.com/foivz/pi2024-zadace-VidTomljenovic/wiki/Projektna-dokumentacija) <br />
 [Tehnička dokumentacija](https://github.com/foivz/pi2024-zadace-VidTomljenovic/wiki/Tehni%C4%8Dka-dokumentacija)
 
 Svi resursi nalaze se u mapi _Documentation_.

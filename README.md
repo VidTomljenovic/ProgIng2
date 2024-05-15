@@ -18,6 +18,9 @@ Kako bi korisnik išta od navedenog mogao koristiti mora biti prijavljen u aplik
 [Korisnički zahtjevi - Softver za osobnu telemedicinu.pdf](https://github.com/foivz/pi2024-zadace-VidTomljenovic/blob/master/Korisni%C4%8Dki%20zahtjevi%20-%20Softver%20za%20osobnu%20telemedicinu.pdf)
 
 ## Resursi
-(ovdje ce ici link na wiki doc)
+[Wiki](https://github.com/foivz/pi2024-zadace-VidTomljenovic/wiki)
+
+[Projektna dokumentacija](https://github.com/foivz/pi2024-zadace-VidTomljenovic/wiki/Projektna-dokumentacija)
+[Tehnička dokumentacija](https://github.com/foivz/pi2024-zadace-VidTomljenovic/wiki/Tehni%C4%8Dka-dokumentacija)
 
 Svi resursi nalaze se u mapi _Documentation_.

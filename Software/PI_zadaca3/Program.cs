@@ -16,7 +16,7 @@ namespace PI_zadaca3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PregledPaketa());
+            Application.Run(new PocetniOdabir());
         }
     }
 }

@@ -12,19 +12,20 @@ namespace PI_zadaca3
 {
     public partial class PregledPaketa : Form
     {
+        void NavigacijaPocetniOdabir()
+        {
+            PocetniOdabir pocetniOdabir = new PocetniOdabir();
+            pocetniOdabir.Show();
+            this.Hide();
+        }
         public PregledPaketa()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void nazadLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
+            NavigacijaPocetniOdabir();
         }
     }
 }

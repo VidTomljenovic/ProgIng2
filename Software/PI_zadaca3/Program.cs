@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBLayer;
 
 namespace PI_zadaca3
 {
@@ -16,6 +17,7 @@ namespace PI_zadaca3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DB.SetConfiguration("PI2324_vtomljeno_DB", "PI2324_vtomljeno_User", "lfrJZvR=");
             Application.Run(new PocetniOdabir());
         }
     }

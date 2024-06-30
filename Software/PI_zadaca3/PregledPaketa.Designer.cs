@@ -37,8 +37,10 @@ namespace PI_zadaca3
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.nazadLabel = new System.Windows.Forms.LinkLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.slikaPaketa)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // odaberiPaketButton
@@ -98,7 +100,7 @@ namespace PI_zadaca3
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(328, 160);
+            this.comboBox1.Location = new System.Drawing.Point(488, 392);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
@@ -114,12 +116,21 @@ namespace PI_zadaca3
             this.nazadLabel.Text = "Nazad";
             this.nazadLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.nazadLabel_LinkClicked);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(64, 120);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(712, 144);
+            this.dataGridView1.TabIndex = 8;
+            // 
             // PregledPaketa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.nazadLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.odjavaLabel);
@@ -127,9 +138,11 @@ namespace PI_zadaca3
             this.Controls.Add(this.panel1);
             this.Name = "PregledPaketa";
             this.Text = "PregledPaketa";
+            this.Load += new System.EventHandler(this.PregledPaketa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.slikaPaketa)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +157,7 @@ namespace PI_zadaca3
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.LinkLabel nazadLabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

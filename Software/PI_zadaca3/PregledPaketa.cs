@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using DBLayer;
 
 namespace PI_zadaca3
 {
@@ -26,6 +28,11 @@ namespace PI_zadaca3
         private void nazadLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             NavigacijaPocetniOdabir();
+        }
+
+        private void PregledPaketa_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

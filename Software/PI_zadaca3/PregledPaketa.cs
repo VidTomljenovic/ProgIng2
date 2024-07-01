@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DBLayer;
+using PI_zadaca3.Repositories;
+using PI_zadaca3.Modules;
 
 namespace PI_zadaca3
 {
@@ -32,7 +34,12 @@ namespace PI_zadaca3
 
         private void PregledPaketa_Load(object sender, EventArgs e)
         {
-
+            PrikazPaketa();
+        }
+        private void PrikazPaketa()
+        {
+            List<Paket> paketi = RepozitorijPaketa.GetPaketi();
+            dataGridView1.DataSource = paketi;
         }
     }
 }

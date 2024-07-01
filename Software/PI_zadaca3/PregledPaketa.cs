@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using DBLayer;
-using PI_zadaca3.Repositories;
 using PI_zadaca3.Modules;
+using PI_zadaca3.Repositories;
 
 namespace PI_zadaca3
 {
+    
     public partial class PregledPaketa : Form
     {
         void NavigacijaPocetniOdabir()
@@ -22,6 +16,7 @@ namespace PI_zadaca3
             pocetniOdabir.Show();
             this.Hide();
         }
+
         public PregledPaketa()
         {
             InitializeComponent();
@@ -35,11 +30,29 @@ namespace PI_zadaca3
         private void PregledPaketa_Load(object sender, EventArgs e)
         {
             PrikazPaketa();
+            richTextBox3.SelectionAlignment = HorizontalAlignment.Center;
         }
+
         private void PrikazPaketa()
         {
             List<Paket> paketi = RepozitorijPaketa.GetPaketi();
-            dataGridView1.DataSource = paketi;
+            dataGridView1.DataSource = paketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int id = (int)dataGridView1.SelectedRows[0].Cells["ID"].Value;
+
+                string opisPaketa = RepozitorijPaketa.GetOpisPaketa(id);
+                string napomenaPaketa = RepozitorijPaketa.GetNapomenaPaketa(id);
+                string cijenaPaketa = RepozitorijPaketa.GetCijenaPaketa(id);
+
+                richTextBox1.Text = opisPaketa;
+                richTextBox2.Text = napomenaPaketa;
+                richTextBox3.Text = cijenaPaketa;
+            }
         }
     }
 }

@@ -30,14 +30,18 @@ namespace PI_zadaca3
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PregledPaketa));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.odaberiPaketButton = new System.Windows.Forms.Button();
             this.odjavaLabel = new System.Windows.Forms.LinkLabel();
             this.slikaPaketa = new System.Windows.Forms.PictureBox();
             this.myDocLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.nazadLabel = new System.Windows.Forms.LinkLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.slikaPaketa)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -48,7 +52,7 @@ namespace PI_zadaca3
             this.odaberiPaketButton.BackColor = System.Drawing.SystemColors.HotTrack;
             this.odaberiPaketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.odaberiPaketButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.odaberiPaketButton.Location = new System.Drawing.Point(328, 392);
+            this.odaberiPaketButton.Location = new System.Drawing.Point(344, 408);
             this.odaberiPaketButton.Name = "odaberiPaketButton";
             this.odaberiPaketButton.Size = new System.Drawing.Size(120, 32);
             this.odaberiPaketButton.TabIndex = 0;
@@ -68,9 +72,9 @@ namespace PI_zadaca3
             // slikaPaketa
             // 
             this.slikaPaketa.Image = ((System.Drawing.Image)(resources.GetObject("slikaPaketa.Image")));
-            this.slikaPaketa.Location = new System.Drawing.Point(72, 8);
+            this.slikaPaketa.Location = new System.Drawing.Point(72, 0);
             this.slikaPaketa.Name = "slikaPaketa";
-            this.slikaPaketa.Size = new System.Drawing.Size(112, 88);
+            this.slikaPaketa.Size = new System.Drawing.Size(112, 96);
             this.slikaPaketa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.slikaPaketa.TabIndex = 2;
             this.slikaPaketa.TabStop = false;
@@ -97,18 +101,10 @@ namespace PI_zadaca3
             this.panel1.Size = new System.Drawing.Size(800, 96);
             this.panel1.TabIndex = 5;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(488, 392);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
-            // 
             // nazadLabel
             // 
             this.nazadLabel.AutoSize = true;
-            this.nazadLabel.Location = new System.Drawing.Point(16, 408);
+            this.nazadLabel.Location = new System.Drawing.Point(16, 424);
             this.nazadLabel.Name = "nazadLabel";
             this.nazadLabel.Size = new System.Drawing.Size(38, 13);
             this.nazadLabel.TabIndex = 7;
@@ -118,11 +114,51 @@ namespace PI_zadaca3
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(64, 120);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.Location = new System.Drawing.Point(224, 96);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(712, 144);
+            this.dataGridView1.Size = new System.Drawing.Size(328, 160);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(40, 304);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(176, 96);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Location = new System.Drawing.Point(320, 304);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(168, 96);
+            this.richTextBox2.TabIndex = 10;
+            this.richTextBox2.Text = "";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(616, 336);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(100, 32);
+            this.richTextBox3.TabIndex = 11;
+            this.richTextBox3.Text = "";
             // 
             // PregledPaketa
             // 
@@ -130,9 +166,11 @@ namespace PI_zadaca3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.nazadLabel);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.odjavaLabel);
             this.Controls.Add(this.odaberiPaketButton);
             this.Controls.Add(this.panel1);
@@ -155,9 +193,11 @@ namespace PI_zadaca3
         private System.Windows.Forms.PictureBox slikaPaketa;
         private System.Windows.Forms.Label myDocLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.LinkLabel nazadLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextBox3;
     }
 }
 

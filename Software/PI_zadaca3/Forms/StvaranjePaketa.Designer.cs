@@ -257,6 +257,7 @@ namespace PI_zadaca3
             this.odjavaLabel.TabIndex = 21;
             this.odjavaLabel.TabStop = true;
             this.odjavaLabel.Text = "Odjava";
+            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
             // 
             // StvaranjePaketa
             // 

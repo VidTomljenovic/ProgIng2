@@ -49,5 +49,10 @@ namespace PI_zadaca3
         {
             NavigacijaStvaranjePaketa();
         }
+
+        private void odjavaLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

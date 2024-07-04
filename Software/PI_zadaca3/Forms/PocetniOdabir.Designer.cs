@@ -39,6 +39,7 @@ namespace PI_zadaca3
             this.grupnaKutija2 = new System.Windows.Forms.GroupBox();
             this.pregledatiPaketeGumb = new System.Windows.Forms.Button();
             this.pregledPaketaSlika = new System.Windows.Forms.PictureBox();
+            this.odjavaLabel = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.grupnaKutija1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noviPaketSlika)).BeginInit();
@@ -49,6 +50,7 @@ namespace PI_zadaca3
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.odjavaLabel);
             this.panel1.Controls.Add(this.grupnaKutija1);
             this.panel1.Controls.Add(this.zelimOdabratiLabel1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -147,6 +149,17 @@ namespace PI_zadaca3
             this.pregledPaketaSlika.TabStop = false;
             this.pregledPaketaSlika.Click += new System.EventHandler(this.pregledPaketaSlika_Click);
             // 
+            // odjavaLabel
+            // 
+            this.odjavaLabel.AutoSize = true;
+            this.odjavaLabel.Location = new System.Drawing.Point(16, 16);
+            this.odjavaLabel.Name = "odjavaLabel";
+            this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
+            this.odjavaLabel.TabIndex = 22;
+            this.odjavaLabel.TabStop = true;
+            this.odjavaLabel.Text = "Odjava";
+            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
+            // 
             // PocetniOdabir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,5 +193,6 @@ namespace PI_zadaca3
         private System.Windows.Forms.GroupBox grupnaKutija2;
         private System.Windows.Forms.Button pregledatiPaketeGumb;
         private System.Windows.Forms.PictureBox pregledPaketaSlika;
+        private System.Windows.Forms.LinkLabel odjavaLabel;
     }
 }

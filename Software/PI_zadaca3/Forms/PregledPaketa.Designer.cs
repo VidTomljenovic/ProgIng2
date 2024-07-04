@@ -32,11 +32,13 @@ namespace PI_zadaca3
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PregledPaketa));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.odaberiPaketButton = new System.Windows.Forms.Button();
             this.odjavaLabel = new System.Windows.Forms.LinkLabel();
             this.slikaPaketa = new System.Windows.Forms.PictureBox();
             this.myDocLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pregledPaketaLabel = new System.Windows.Forms.Label();
             this.nazadLabel = new System.Windows.Forms.LinkLabel();
             this.prikazPaketadataGridView = new System.Windows.Forms.DataGridView();
             this.opisPaketaRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -48,7 +50,6 @@ namespace PI_zadaca3
             this.cijenaPaketaLabel = new System.Windows.Forms.Label();
             this.pretragaPaketalabel = new System.Windows.Forms.Label();
             this.povecaloPictureBox = new System.Windows.Forms.PictureBox();
-            this.pregledPaketaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.slikaPaketa)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prikazPaketadataGridView)).BeginInit();
@@ -66,16 +67,19 @@ namespace PI_zadaca3
             this.odaberiPaketButton.TabIndex = 0;
             this.odaberiPaketButton.Text = "Odaberi paket";
             this.odaberiPaketButton.UseVisualStyleBackColor = false;
+            this.odaberiPaketButton.Click += new System.EventHandler(this.odaberiPaketButton_Click);
             // 
             // odjavaLabel
             // 
             this.odjavaLabel.AutoSize = true;
+            this.odjavaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.odjavaLabel.Location = new System.Drawing.Point(8, 8);
             this.odjavaLabel.Name = "odjavaLabel";
             this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
             this.odjavaLabel.TabIndex = 1;
             this.odjavaLabel.TabStop = true;
             this.odjavaLabel.Text = "Odjava";
+            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
             // 
             // slikaPaketa
             // 
@@ -110,6 +114,18 @@ namespace PI_zadaca3
             this.panel1.Size = new System.Drawing.Size(800, 96);
             this.panel1.TabIndex = 5;
             // 
+            // pregledPaketaLabel
+            // 
+            this.pregledPaketaLabel.AutoSize = true;
+            this.pregledPaketaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pregledPaketaLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pregledPaketaLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.pregledPaketaLabel.Location = new System.Drawing.Point(328, 72);
+            this.pregledPaketaLabel.Name = "pregledPaketaLabel";
+            this.pregledPaketaLabel.Size = new System.Drawing.Size(120, 22);
+            this.pregledPaketaLabel.TabIndex = 21;
+            this.pregledPaketaLabel.Text = "Pregled paketa";
+            // 
             // nazadLabel
             // 
             this.nazadLabel.AutoSize = true;
@@ -126,18 +142,27 @@ namespace PI_zadaca3
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prikazPaketadataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.prikazPaketadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.prikazPaketadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.prikazPaketadataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.prikazPaketadataGridView.Location = new System.Drawing.Point(224, 96);
+            this.prikazPaketadataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.prikazPaketadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.prikazPaketadataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.prikazPaketadataGridView.Location = new System.Drawing.Point(216, 96);
             this.prikazPaketadataGridView.Name = "prikazPaketadataGridView";
-            this.prikazPaketadataGridView.Size = new System.Drawing.Size(336, 168);
+            this.prikazPaketadataGridView.ReadOnly = true;
+            this.prikazPaketadataGridView.Size = new System.Drawing.Size(352, 168);
             this.prikazPaketadataGridView.TabIndex = 8;
             this.prikazPaketadataGridView.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -226,18 +251,6 @@ namespace PI_zadaca3
             this.povecaloPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.povecaloPictureBox.TabIndex = 17;
             this.povecaloPictureBox.TabStop = false;
-            // 
-            // pregledPaketaLabel
-            // 
-            this.pregledPaketaLabel.AutoSize = true;
-            this.pregledPaketaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pregledPaketaLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pregledPaketaLabel.ForeColor = System.Drawing.SystemColors.Info;
-            this.pregledPaketaLabel.Location = new System.Drawing.Point(328, 72);
-            this.pregledPaketaLabel.Name = "pregledPaketaLabel";
-            this.pregledPaketaLabel.Size = new System.Drawing.Size(120, 22);
-            this.pregledPaketaLabel.TabIndex = 21;
-            this.pregledPaketaLabel.Text = "Pregled paketa";
             // 
             // PregledPaketa
             // 

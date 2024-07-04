@@ -35,12 +35,27 @@ namespace PI_zadaca3.Repositories
             return paket;
         }
 
+        internal static Paket GetPaket(object id)
+        {
+            throw new NotImplementedException();
+        }
+
         public static Paket GetPaket(int id)
         {
             // Implementirajte logiku za dohvaćanje Paket-a iz baze podataka ili gdje god je pohranjen
             // Za potrebe demonstracije, pretpostavljamo da imate listu objekata Paket
             List<Paket> paketi = GetPaketi(); // Pretpostavka: GetPaketi() dohvaća sve objekte Paket
             return paketi.FirstOrDefault(p => p.ID == id);
+        }
+
+        public static string GetImePaketa(int id)
+        {
+            Paket paket = GetPaket(id);
+            if (paket != null)
+            {
+                return paket.ImePaketa;
+            }
+            return string.Empty; // ili null, ovisno o vašim potrebama
         }
 
         public static string GetOpisPaketa(int id)
@@ -75,5 +90,19 @@ namespace PI_zadaca3.Repositories
                 return ""; // ili null, ovisno o vašim preferencijama
             }
         }
+        public static void DeletePaket(int id)
+        {
+            string sql = "DELETE FROM PaketUsluga WHERE ID = @ID";
+            string connectionString = Conn.GetConnectionString();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@ID", id);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
     }
 }

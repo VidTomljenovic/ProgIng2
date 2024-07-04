@@ -103,6 +103,31 @@ namespace PI_zadaca3.Repositories
                 command.ExecuteNonQuery();
             }
         }
+        public static void UpdatePaketExceptID(int id, string imePaketa, string opisPaketa, string napomenaPaketa, int cijenaPaketa)
+        {
+            // Connection string za vašu bazu podataka
+            string connectionString = Conn.GetConnectionString();
 
+            // SQL upit za ažuriranje informacija o paketu, isključujući ID
+            string sql = @"UPDATE PaketUsluga SET ImePaketa = @imePaketa, OpisPaketa = @opisPaketa, NapomenaPaketa = @napomenaPaketa, CijenaPaketa = @cijenaPaketa WHERE ID = @id";
+
+            // Definiranje veze i komande za izvršenje upita
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    // Dodavanje parametara
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@imePaketa", imePaketa);
+                    command.Parameters.AddWithValue("@opisPaketa", opisPaketa);
+                    command.Parameters.AddWithValue("@napomenaPaketa", napomenaPaketa ?? (object)DBNull.Value); // Rukovanje null vrijednostima
+                    command.Parameters.AddWithValue("@cijenaPaketa", cijenaPaketa);
+
+                    // Otvorite vezu i izvršite upit
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

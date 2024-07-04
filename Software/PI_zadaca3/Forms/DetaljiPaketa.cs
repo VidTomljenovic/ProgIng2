@@ -75,5 +75,31 @@ namespace PI_zadaca3.Forms
                 detaljiPaketadataGridView.BeginEdit(true);
             }
         }
+
+        private void spremiPromjeneButton_Click(object sender, EventArgs e)
+        {
+            // Dohvati nove vrijednosti koje je korisnik unio
+            var imePaketaCell = detaljiPaketadataGridView.Rows[0].Cells["ImePaketa"];
+            string novoImePaketa = detaljiPaketadataGridView.Rows[0].Cells["ImePaketa"].Value.ToString();
+            if (imePaketaCell.Value == null || string.IsNullOrWhiteSpace(imePaketaCell.Value.ToString()))
+            {
+                MessageBox.Show("Ime paketa ne smije biti prazno.", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string noviOpisPaketa = detaljiPaketadataGridView.Rows[0].Cells["OpisPaketa"].Value.ToString();
+            string novaNapomenaPaketa = detaljiPaketadataGridView.Rows[0].Cells["NapomenaPaketa"].Value?.ToString(); // Može biti null
+            int novaCijenaPaketa = Convert.ToInt32(detaljiPaketadataGridView.Rows[0].Cells["CijenaPaketa"].Value);
+
+            // Ažuriraj podatke u bazi za odabrani paket
+            RepozitorijPaketa.UpdatePaketExceptID(detaljiPaketaId, novoImePaketa, noviOpisPaketa, novaNapomenaPaketa, novaCijenaPaketa);
+
+            // Prikaži poruku da su promjene spremljene
+            MessageBox.Show("Promjene su uspješno spremljene.");
+
+            // Zatvori trenutnu formu i prikaži formu za pregled paketa
+            PregledPaketa pregledPaketaForm = new PregledPaketa();
+            pregledPaketaForm.Show();
+            this.Hide();
+        }
     }
 }

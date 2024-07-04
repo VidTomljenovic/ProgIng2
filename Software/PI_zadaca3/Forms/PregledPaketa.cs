@@ -30,40 +30,40 @@ namespace PI_zadaca3
         private void PregledPaketa_Load(object sender, EventArgs e)
         {
             PrikazPaketa();
-            richTextBox3.SelectionAlignment = HorizontalAlignment.Center;
+            cijenaPaketaRichTextBox.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void PrikazPaketa()
         {
             List<Paket> paketi = RepozitorijPaketa.GetPaketi();
-            dataGridView1.DataSource = paketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
+            prikazPaketadataGridView.DataSource = paketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (prikazPaketadataGridView.SelectedRows.Count > 0)
             {
-                int id = (int)dataGridView1.SelectedRows[0].Cells["ID"].Value;
+                int id = (int)prikazPaketadataGridView.SelectedRows[0].Cells["ID"].Value;
 
                 string opisPaketa = RepozitorijPaketa.GetOpisPaketa(id);
                 string napomenaPaketa = RepozitorijPaketa.GetNapomenaPaketa(id);
                 string cijenaPaketa = RepozitorijPaketa.GetCijenaPaketa(id);
 
-                richTextBox1.Text = opisPaketa;
-                richTextBox2.Text = napomenaPaketa;
-                richTextBox3.Text = cijenaPaketa;
+                opisPaketaRichTextBox.Text = opisPaketa;
+                napomenaPaketaRichTextBox.Text = napomenaPaketa;
+                cijenaPaketaRichTextBox.Text = cijenaPaketa;
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string pretrazeniTekst = textBox1.Text.ToLower(); // Uzmite tekst iz TextBox-a i pretvorite u mala slova
+            string pretrazeniTekst = pretragaPaketatextBox.Text.ToLower(); // Uzmite tekst iz TextBox-a i pretvorite u mala slova
 
             // Filtrirajte listu paketa prema unesenom tekstu
             List<Paket> filtriraniPaketi = RepozitorijPaketa.GetPaketi().Where(p => p.ImePaketa.ToLower().Contains(pretrazeniTekst)).ToList();
 
             // Ažurirajte DataSource DataGridView-a s filtriranim paketima
-            dataGridView1.DataSource = filtriraniPaketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
+            prikazPaketadataGridView.DataSource = filtriraniPaketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
         }
     }
 }

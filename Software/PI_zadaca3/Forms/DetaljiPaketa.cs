@@ -78,40 +78,44 @@ namespace PI_zadaca3.Forms
 
         private void spremiPromjeneButton_Click(object sender, EventArgs e)
         {
-                // Provjerite vrijednost ImePaketa
-                var imePaketaCell = detaljiPaketadataGridView.Rows[0].Cells["ImePaketa"];
-                // Dohvatite ostale vrijednosti iz DataGridView-a
-                string novoImePaketa = imePaketaCell.Value.ToString();
-                if (imePaketaCell.Value == null || string.IsNullOrWhiteSpace(imePaketaCell.Value.ToString()))
-                {
-                    MessageBox.Show("Ime paketa ne smije biti prazno.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                var opisPaketaCell = detaljiPaketadataGridView.Rows[0].Cells["OpisPaketa"];
-                string noviOpisPaketa = opisPaketaCell.Value.ToString();
-                if (opisPaketaCell.Value == null || string.IsNullOrWhiteSpace(opisPaketaCell.Value.ToString()))
-                {
-                    MessageBox.Show("Opis paketa ne smije biti prazan.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                var napomenaPaketaCell = detaljiPaketadataGridView.Rows[0].Cells["NapomenaPaketa"];
-                string novaNapomenaPaketa = napomenaPaketaCell.Value.ToString(); // Može biti null
-                var cijenaPaketaCell = detaljiPaketadataGridView.Rows[0].Cells["CijenaPaketa"];
-                int novaCijenaPaketa = Convert.ToInt32(cijenaPaketaCell.Value);
-                if (cijenaPaketaCell.Value == null || string.IsNullOrWhiteSpace(cijenaPaketaCell.Value.ToString()))
-                {
-                    MessageBox.Show("Cijena paketa ne smije biti prazna.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                // Ažuriraj podatke u bazi za odabrani paket
-                RepozitorijPaketa.UpdatePaketExceptID(detaljiPaketaId, novoImePaketa, noviOpisPaketa, novaNapomenaPaketa, novaCijenaPaketa);
-                // Prikaži poruku da su promjene spremljene
-                MessageBox.Show("Promjene su uspješno spremljene.");
+            // Provjerite vrijednost ImePaketa
+            var imePaketaCell = detaljiPaketadataGridView.Rows[0].Cells["ImePaketa"];
+            if (imePaketaCell.Value == null || string.IsNullOrWhiteSpace(imePaketaCell.Value.ToString()))
+            {
+                MessageBox.Show("Ime paketa ne smije biti prazno.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string novoImePaketa = imePaketaCell.Value.ToString();
 
-                // Zatvori trenutnu formu i prikaži formu za pregled paketa
-                PregledPaketa pregledPaketaForm = new PregledPaketa();
-                pregledPaketaForm.Show();
-                this.Hide();
+            var opisPaketaCell = detaljiPaketadataGridView.Rows[0].Cells["OpisPaketa"];
+            if (opisPaketaCell.Value == null || string.IsNullOrWhiteSpace(opisPaketaCell.Value.ToString()))
+            {
+                MessageBox.Show("Opis paketa ne smije biti prazan.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string noviOpisPaketa = opisPaketaCell.Value.ToString();
+
+            var napomenaPaketaCell = detaljiPaketadataGridView.Rows[0].Cells["NapomenaPaketa"];
+            string novaNapomenaPaketa = napomenaPaketaCell.Value?.ToString(); // Može biti null
+
+            var cijenaPaketaCell = detaljiPaketadataGridView.Rows[0].Cells["CijenaPaketa"];
+            if (cijenaPaketaCell.Value == null || string.IsNullOrWhiteSpace(cijenaPaketaCell.Value.ToString()))
+            {
+                MessageBox.Show("Cijena paketa ne smije biti prazna.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int novaCijenaPaketa = Convert.ToInt32(cijenaPaketaCell.Value);
+
+            // Ažuriraj podatke u bazi za odabrani paket
+            RepozitorijPaketa.UpdatePaketExceptID(detaljiPaketaId, novoImePaketa, noviOpisPaketa, novaNapomenaPaketa, novaCijenaPaketa);
+
+            // Prikaži poruku da su promjene spremljene
+            MessageBox.Show("Promjene su uspješno spremljene.");
+
+            // Zatvori trenutnu formu i prikaži formu za pregled paketa
+            PregledPaketa pregledPaketaForm = new PregledPaketa();
+            pregledPaketaForm.Show();
+            this.Hide();
         }
     }
 }

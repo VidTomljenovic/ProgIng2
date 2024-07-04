@@ -31,6 +31,7 @@ namespace PI_zadaca3
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PocetniOdabir));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.odjavaLabel = new System.Windows.Forms.LinkLabel();
             this.grupnaKutija1 = new System.Windows.Forms.GroupBox();
             this.stvoritiPaketGumb = new System.Windows.Forms.Button();
             this.noviPaketSlika = new System.Windows.Forms.PictureBox();
@@ -39,7 +40,6 @@ namespace PI_zadaca3
             this.grupnaKutija2 = new System.Windows.Forms.GroupBox();
             this.pregledatiPaketeGumb = new System.Windows.Forms.Button();
             this.pregledPaketaSlika = new System.Windows.Forms.PictureBox();
-            this.odjavaLabel = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.grupnaKutija1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noviPaketSlika)).BeginInit();
@@ -57,6 +57,17 @@ namespace PI_zadaca3
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 456);
             this.panel1.TabIndex = 6;
+            // 
+            // odjavaLabel
+            // 
+            this.odjavaLabel.AutoSize = true;
+            this.odjavaLabel.Location = new System.Drawing.Point(16, 16);
+            this.odjavaLabel.Name = "odjavaLabel";
+            this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
+            this.odjavaLabel.TabIndex = 22;
+            this.odjavaLabel.TabStop = true;
+            this.odjavaLabel.Text = "Odjava";
+            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
             // 
             // grupnaKutija1
             // 
@@ -93,6 +104,9 @@ namespace PI_zadaca3
             // 
             // zelimOdabratiLabel1
             // 
+            this.zelimOdabratiLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.zelimOdabratiLabel1.AutoSize = true;
             this.zelimOdabratiLabel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.zelimOdabratiLabel1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,17 +162,6 @@ namespace PI_zadaca3
             this.pregledPaketaSlika.TabIndex = 0;
             this.pregledPaketaSlika.TabStop = false;
             this.pregledPaketaSlika.Click += new System.EventHandler(this.pregledPaketaSlika_Click);
-            // 
-            // odjavaLabel
-            // 
-            this.odjavaLabel.AutoSize = true;
-            this.odjavaLabel.Location = new System.Drawing.Point(16, 16);
-            this.odjavaLabel.Name = "odjavaLabel";
-            this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
-            this.odjavaLabel.TabIndex = 22;
-            this.odjavaLabel.TabStop = true;
-            this.odjavaLabel.Text = "Odjava";
-            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
             // 
             // PocetniOdabir
             // 

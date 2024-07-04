@@ -162,6 +162,7 @@ namespace PI_zadaca3
             this.prikazPaketadataGridView.Location = new System.Drawing.Point(216, 96);
             this.prikazPaketadataGridView.Name = "prikazPaketadataGridView";
             this.prikazPaketadataGridView.ReadOnly = true;
+            this.prikazPaketadataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.prikazPaketadataGridView.Size = new System.Drawing.Size(352, 168);
             this.prikazPaketadataGridView.TabIndex = 8;
             this.prikazPaketadataGridView.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);

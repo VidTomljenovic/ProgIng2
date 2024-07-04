@@ -161,6 +161,7 @@ namespace PI_zadaca3
             this.stvoriPaketGumb.TabIndex = 18;
             this.stvoriPaketGumb.Text = "Stvori";
             this.stvoriPaketGumb.UseVisualStyleBackColor = false;
+            this.stvoriPaketGumb.Click += new System.EventHandler(this.stvoriPaketGumb_Click);
             // 
             // label5
             // 

@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\Conn.cs" />
     <Compile Include="Modules\Paket.cs" />
     <Compile Include="Forms\PocetniOdabir.cs">
       <SubType>Form</SubType>

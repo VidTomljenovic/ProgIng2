@@ -56,6 +56,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\DetaljiPaketa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetaljiPaketa.Designer.cs">
+      <DependentUpon>DetaljiPaketa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Conn.cs" />
     <Compile Include="Modules\Paket.cs" />
     <Compile Include="Forms\PocetniOdabir.cs">
       <SubType>Form</SubType>
@@ -69,6 +76,7 @@
     <Compile Include="Forms\PregledPaketa.Designer.cs">
       <DependentUpon>PregledPaketa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Tooltip.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepozitorijPaketa.cs" />
@@ -79,6 +87,9 @@
     <Compile Include="Forms\StvaranjePaketa.Designer.cs">
       <DependentUpon>StvaranjePaketa.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\DetaljiPaketa.resx">
+      <DependentUpon>DetaljiPaketa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PocetniOdabir.resx">
       <DependentUpon>PocetniOdabir.cs</DependentUpon>
     </EmbeddedResource>

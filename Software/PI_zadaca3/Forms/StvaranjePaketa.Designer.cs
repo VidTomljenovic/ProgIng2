@@ -29,22 +29,33 @@ namespace PI_zadaca3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StvaranjePaketa));
             this.nazadLabel = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.imePaketaLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.odjavaLabel = new System.Windows.Forms.LinkLabel();
+            this.izradaNovogPaketaLabel = new System.Windows.Forms.Label();
+            this.napomenaLabel = new System.Windows.Forms.Label();
+            this.noviPaketpictureBox = new System.Windows.Forms.PictureBox();
             this.myDocLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.imePaketaTxt = new System.Windows.Forms.TextBox();
+            this.cijenaPaketaTxt = new System.Windows.Forms.TextBox();
+            this.opisPaketaLabel = new System.Windows.Forms.Label();
+            this.napomenaPaketaLabel = new System.Windows.Forms.Label();
+            this.cijenaPaketaLabel = new System.Windows.Forms.Label();
+            this.stvoriPaketGumb = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.opisPaketaRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.napomenaPaketaRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.euroLabel = new System.Windows.Forms.Label();
+            this.stvaranjePaketaToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pomocPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noviPaketpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // nazadLabel
@@ -58,25 +69,72 @@ namespace PI_zadaca3
             this.nazadLabel.Text = "Nazad";
             this.nazadLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.nazadLabel_LinkClicked);
             // 
-            // label1
+            // imePaketaLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 128);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Ime paketa:";
+            this.imePaketaLabel.AutoSize = true;
+            this.imePaketaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imePaketaLabel.Location = new System.Drawing.Point(72, 128);
+            this.imePaketaLabel.Name = "imePaketaLabel";
+            this.imePaketaLabel.Size = new System.Drawing.Size(93, 20);
+            this.imePaketaLabel.TabIndex = 9;
+            this.imePaketaLabel.Text = "Ime paketa:";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pomocPictureBox);
+            this.panel1.Controls.Add(this.odjavaLabel);
+            this.panel1.Controls.Add(this.izradaNovogPaketaLabel);
+            this.panel1.Controls.Add(this.napomenaLabel);
+            this.panel1.Controls.Add(this.noviPaketpictureBox);
             this.panel1.Controls.Add(this.myDocLabel);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 96);
             this.panel1.TabIndex = 10;
+            // 
+            // odjavaLabel
+            // 
+            this.odjavaLabel.AutoSize = true;
+            this.odjavaLabel.Location = new System.Drawing.Point(8, 16);
+            this.odjavaLabel.Name = "odjavaLabel";
+            this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
+            this.odjavaLabel.TabIndex = 21;
+            this.odjavaLabel.TabStop = true;
+            this.odjavaLabel.Text = "Odjava";
+            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
+            // 
+            // izradaNovogPaketaLabel
+            // 
+            this.izradaNovogPaketaLabel.AutoSize = true;
+            this.izradaNovogPaketaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.izradaNovogPaketaLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.izradaNovogPaketaLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.izradaNovogPaketaLabel.Location = new System.Drawing.Point(312, 72);
+            this.izradaNovogPaketaLabel.Name = "izradaNovogPaketaLabel";
+            this.izradaNovogPaketaLabel.Size = new System.Drawing.Size(156, 22);
+            this.izradaNovogPaketaLabel.TabIndex = 20;
+            this.izradaNovogPaketaLabel.Text = "Izrada novog paketa";
+            // 
+            // napomenaLabel
+            // 
+            this.napomenaLabel.AutoSize = true;
+            this.napomenaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.napomenaLabel.Location = new System.Drawing.Point(536, 80);
+            this.napomenaLabel.Name = "napomenaLabel";
+            this.napomenaLabel.Size = new System.Drawing.Size(263, 13);
+            this.napomenaLabel.TabIndex = 19;
+            this.napomenaLabel.Text = "Popunjavanje polja označenih * je obavezno.";
+            // 
+            // noviPaketpictureBox
+            // 
+            this.noviPaketpictureBox.Image = ((System.Drawing.Image)(resources.GetObject("noviPaketpictureBox.Image")));
+            this.noviPaketpictureBox.Location = new System.Drawing.Point(72, 0);
+            this.noviPaketpictureBox.Name = "noviPaketpictureBox";
+            this.noviPaketpictureBox.Size = new System.Drawing.Size(104, 96);
+            this.noviPaketpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.noviPaketpictureBox.TabIndex = 5;
+            this.noviPaketpictureBox.TabStop = false;
             // 
             // myDocLabel
             // 
@@ -90,85 +148,131 @@ namespace PI_zadaca3
             this.myDocLabel.TabIndex = 4;
             this.myDocLabel.Text = "MyDoc";
             // 
-            // pictureBox1
+            // imePaketaTxt
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(72, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.imePaketaTxt.Location = new System.Drawing.Point(192, 128);
+            this.imePaketaTxt.Name = "imePaketaTxt";
+            this.imePaketaTxt.Size = new System.Drawing.Size(176, 20);
+            this.imePaketaTxt.TabIndex = 11;
             // 
-            // textBox1
+            // cijenaPaketaTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(224, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 11;
+            this.cijenaPaketaTxt.Location = new System.Drawing.Point(192, 296);
+            this.cijenaPaketaTxt.Name = "cijenaPaketaTxt";
+            this.cijenaPaketaTxt.Size = new System.Drawing.Size(104, 20);
+            this.cijenaPaketaTxt.TabIndex = 14;
             // 
-            // textBox2
+            // opisPaketaLabel
             // 
-            this.textBox2.Location = new System.Drawing.Point(224, 176);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 12;
+            this.opisPaketaLabel.AutoSize = true;
+            this.opisPaketaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opisPaketaLabel.Location = new System.Drawing.Point(72, 176);
+            this.opisPaketaLabel.Name = "opisPaketaLabel";
+            this.opisPaketaLabel.Size = new System.Drawing.Size(98, 20);
+            this.opisPaketaLabel.TabIndex = 15;
+            this.opisPaketaLabel.Text = "Opis paketa:";
             // 
-            // textBox3
+            // napomenaPaketaLabel
             // 
-            this.textBox3.Location = new System.Drawing.Point(224, 224);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 20);
-            this.textBox3.TabIndex = 13;
+            this.napomenaPaketaLabel.AutoSize = true;
+            this.napomenaPaketaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.napomenaPaketaLabel.Location = new System.Drawing.Point(416, 128);
+            this.napomenaPaketaLabel.Name = "napomenaPaketaLabel";
+            this.napomenaPaketaLabel.Size = new System.Drawing.Size(144, 20);
+            this.napomenaPaketaLabel.TabIndex = 16;
+            this.napomenaPaketaLabel.Text = "Napomena paketa:";
             // 
-            // textBox4
+            // cijenaPaketaLabel
             // 
-            this.textBox4.Location = new System.Drawing.Point(224, 272);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 20);
-            this.textBox4.TabIndex = 14;
+            this.cijenaPaketaLabel.AutoSize = true;
+            this.cijenaPaketaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cijenaPaketaLabel.Location = new System.Drawing.Point(72, 296);
+            this.cijenaPaketaLabel.Name = "cijenaPaketaLabel";
+            this.cijenaPaketaLabel.Size = new System.Drawing.Size(110, 20);
+            this.cijenaPaketaLabel.TabIndex = 17;
+            this.cijenaPaketaLabel.Text = "Cijena paketa:";
             // 
-            // label2
+            // stvoriPaketGumb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(72, 176);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Opis paketa:";
+            this.stvoriPaketGumb.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.stvoriPaketGumb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stvoriPaketGumb.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.stvoriPaketGumb.Location = new System.Drawing.Point(344, 400);
+            this.stvoriPaketGumb.Name = "stvoriPaketGumb";
+            this.stvoriPaketGumb.Size = new System.Drawing.Size(104, 32);
+            this.stvoriPaketGumb.TabIndex = 18;
+            this.stvoriPaketGumb.Text = "Stvori paket";
+            this.stvoriPaketGumb.UseVisualStyleBackColor = false;
+            this.stvoriPaketGumb.Click += new System.EventHandler(this.stvoriPaketGumb_Click);
             // 
-            // label3
+            // label6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 224);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Napomena paketa:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(168, 128);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 16);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "*";
             // 
-            // label4
+            // label7
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(72, 272);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Cijena paketa:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(168, 176);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "*";
             // 
-            // button1
+            // label8
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(344, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 32);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Stvori";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(176, 296);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(14, 16);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "*";
+            // 
+            // opisPaketaRichTextBox
+            // 
+            this.opisPaketaRichTextBox.Location = new System.Drawing.Point(192, 176);
+            this.opisPaketaRichTextBox.Name = "opisPaketaRichTextBox";
+            this.opisPaketaRichTextBox.Size = new System.Drawing.Size(176, 96);
+            this.opisPaketaRichTextBox.TabIndex = 22;
+            this.opisPaketaRichTextBox.Text = "";
+            // 
+            // napomenaPaketaRichTextBox
+            // 
+            this.napomenaPaketaRichTextBox.Location = new System.Drawing.Point(568, 128);
+            this.napomenaPaketaRichTextBox.Name = "napomenaPaketaRichTextBox";
+            this.napomenaPaketaRichTextBox.Size = new System.Drawing.Size(160, 96);
+            this.napomenaPaketaRichTextBox.TabIndex = 23;
+            this.napomenaPaketaRichTextBox.Text = "";
+            // 
+            // euroLabel
+            // 
+            this.euroLabel.AutoSize = true;
+            this.euroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.euroLabel.Location = new System.Drawing.Point(296, 296);
+            this.euroLabel.Name = "euroLabel";
+            this.euroLabel.Size = new System.Drawing.Size(18, 20);
+            this.euroLabel.TabIndex = 24;
+            this.euroLabel.Text = "€";
+            // 
+            // pomocPictureBox
+            // 
+            this.pomocPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pomocPictureBox.Image")));
+            this.pomocPictureBox.Location = new System.Drawing.Point(736, 8);
+            this.pomocPictureBox.Name = "pomocPictureBox";
+            this.pomocPictureBox.Size = new System.Drawing.Size(52, 48);
+            this.pomocPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pomocPictureBox.TabIndex = 25;
+            this.pomocPictureBox.TabStop = false;
             // 
             // StvaranjePaketa
             // 
@@ -176,22 +280,27 @@ namespace PI_zadaca3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.euroLabel);
+            this.Controls.Add(this.napomenaPaketaRichTextBox);
+            this.Controls.Add(this.opisPaketaRichTextBox);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.stvoriPaketGumb);
+            this.Controls.Add(this.cijenaPaketaLabel);
+            this.Controls.Add(this.napomenaPaketaLabel);
+            this.Controls.Add(this.opisPaketaLabel);
+            this.Controls.Add(this.cijenaPaketaTxt);
+            this.Controls.Add(this.imePaketaTxt);
+            this.Controls.Add(this.imePaketaLabel);
             this.Controls.Add(this.nazadLabel);
             this.Controls.Add(this.panel1);
             this.Name = "StvaranjePaketa";
             this.Text = "StvaranjePaketa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noviPaketpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,17 +309,26 @@ namespace PI_zadaca3
         #endregion
 
         private System.Windows.Forms.LinkLabel nazadLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label imePaketaLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label myDocLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox noviPaketpictureBox;
+        private System.Windows.Forms.TextBox imePaketaTxt;
+        private System.Windows.Forms.TextBox cijenaPaketaTxt;
+        private System.Windows.Forms.Label opisPaketaLabel;
+        private System.Windows.Forms.Label napomenaPaketaLabel;
+        private System.Windows.Forms.Label cijenaPaketaLabel;
+        private System.Windows.Forms.Button stvoriPaketGumb;
+        private System.Windows.Forms.Label napomenaLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RichTextBox opisPaketaRichTextBox;
+        private System.Windows.Forms.RichTextBox napomenaPaketaRichTextBox;
+        private System.Windows.Forms.Label euroLabel;
+        private System.Windows.Forms.Label izradaNovogPaketaLabel;
+        private System.Windows.Forms.LinkLabel odjavaLabel;
+        private System.Windows.Forms.ToolTip stvaranjePaketaToolTip;
+        private System.Windows.Forms.PictureBox pomocPictureBox;
     }
 }

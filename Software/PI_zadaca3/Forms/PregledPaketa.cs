@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using PI_zadaca3.Forms;
 using PI_zadaca3.Modules;
 using PI_zadaca3.Repositories;
 
 namespace PI_zadaca3
 {
-    
+
     public partial class PregledPaketa : Form
     {
         void NavigacijaPocetniOdabir()
@@ -20,6 +21,8 @@ namespace PI_zadaca3
         public PregledPaketa()
         {
             InitializeComponent();
+            pomocPictureBox.MouseHover += pomocPictureBox_MouseHover;
+            pomocPictureBox.MouseLeave += pomocPictureBox_MouseLeave;
         }
 
         private void nazadLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -30,40 +33,69 @@ namespace PI_zadaca3
         private void PregledPaketa_Load(object sender, EventArgs e)
         {
             PrikazPaketa();
-            richTextBox3.SelectionAlignment = HorizontalAlignment.Center;
+            cijenaPaketaRichTextBox.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void PrikazPaketa()
         {
             List<Paket> paketi = RepozitorijPaketa.GetPaketi();
-            dataGridView1.DataSource = paketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
+            prikazPaketadataGridView.DataSource = paketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (prikazPaketadataGridView.SelectedRows.Count > 0)
             {
-                int id = (int)dataGridView1.SelectedRows[0].Cells["ID"].Value;
+                int id = (int)prikazPaketadataGridView.SelectedRows[0].Cells["ID"].Value;
 
                 string opisPaketa = RepozitorijPaketa.GetOpisPaketa(id);
                 string napomenaPaketa = RepozitorijPaketa.GetNapomenaPaketa(id);
                 string cijenaPaketa = RepozitorijPaketa.GetCijenaPaketa(id);
 
-                richTextBox1.Text = opisPaketa;
-                richTextBox2.Text = napomenaPaketa;
-                richTextBox3.Text = cijenaPaketa;
+                opisPaketaRichTextBox.Text = opisPaketa;
+                napomenaPaketaRichTextBox.Text = napomenaPaketa;
+                cijenaPaketaRichTextBox.Text = cijenaPaketa;
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string pretrazeniTekst = textBox1.Text.ToLower(); // Uzmite tekst iz TextBox-a i pretvorite u mala slova
+            string pretrazeniTekst = pretragaPaketatextBox.Text.ToLower(); // Uzmite tekst iz TextBox-a i pretvorite u mala slova
 
             // Filtrirajte listu paketa prema unesenom tekstu
             List<Paket> filtriraniPaketi = RepozitorijPaketa.GetPaketi().Where(p => p.ImePaketa.ToLower().Contains(pretrazeniTekst)).ToList();
 
             // Ažurirajte DataSource DataGridView-a s filtriranim paketima
-            dataGridView1.DataSource = filtriraniPaketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
+            prikazPaketadataGridView.DataSource = filtriraniPaketi.Select(p => new { p.ID, p.ImePaketa }).ToList();
+        }
+
+        private void odjavaLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void odaberiPaketButton_Click(object sender, EventArgs e)
+        {
+            if (prikazPaketadataGridView.SelectedRows.Count > 0)
+            {
+                int id = (int)prikazPaketadataGridView.SelectedRows[0].Cells["ID"].Value;
+
+                // Kreirajte novu instancu DetaljiPaketa forme i proslijedite ID
+                DetaljiPaketa detaljiPaketa = new DetaljiPaketa(id);
+                detaljiPaketa.Show();
+
+                // Opcionalno: Sakrijte trenutnu formu
+                this.Hide();
+            }
+        }
+        private void pomocPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            Tooltip.ShowTooltip(pomocPictureBox, "Ovdje možeš pregledati sve trenutno dostupne pakete, izvršiti pretragu prema imenu te odabrati jedan od ponuđenih i nastaviti na njegovo uređivanje.");
+        }
+
+        private void pomocPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            Tooltip.HideTooltip(pomocPictureBox);
         }
     }
 }

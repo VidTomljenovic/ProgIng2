@@ -76,6 +76,7 @@
     <Compile Include="Forms\PregledPaketa.Designer.cs">
       <DependentUpon>PregledPaketa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Tooltip.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepozitorijPaketa.cs" />

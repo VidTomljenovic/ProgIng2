@@ -29,6 +29,7 @@ namespace PI_zadaca3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PocetniOdabir));
             this.panel1 = new System.Windows.Forms.Panel();
             this.odjavaLabel = new System.Windows.Forms.LinkLabel();
@@ -40,11 +41,15 @@ namespace PI_zadaca3
             this.grupnaKutija2 = new System.Windows.Forms.GroupBox();
             this.pregledatiPaketeGumb = new System.Windows.Forms.Button();
             this.pregledPaketaSlika = new System.Windows.Forms.PictureBox();
+            this.pocetniOdabirToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.pomocPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.grupnaKutija1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noviPaketSlika)).BeginInit();
             this.grupnaKutija2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pregledPaketaSlika)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,9 +109,6 @@ namespace PI_zadaca3
             // 
             // zelimOdabratiLabel1
             // 
-            this.zelimOdabratiLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.zelimOdabratiLabel1.AutoSize = true;
             this.zelimOdabratiLabel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.zelimOdabratiLabel1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,12 +165,33 @@ namespace PI_zadaca3
             this.pregledPaketaSlika.TabStop = false;
             this.pregledPaketaSlika.Click += new System.EventHandler(this.pregledPaketaSlika_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(736, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "(hover me)";
+            // 
+            // pomocPictureBox
+            // 
+            this.pomocPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pomocPictureBox.Image")));
+            this.pomocPictureBox.Location = new System.Drawing.Point(736, 8);
+            this.pomocPictureBox.Name = "pomocPictureBox";
+            this.pomocPictureBox.Size = new System.Drawing.Size(52, 48);
+            this.pomocPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pomocPictureBox.TabIndex = 12;
+            this.pomocPictureBox.TabStop = false;
+            // 
             // PocetniOdabir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pomocPictureBox);
             this.Controls.Add(this.grupnaKutija2);
             this.Controls.Add(this.zelimOdabratiLabel2);
             this.Controls.Add(this.panel1);
@@ -180,6 +203,7 @@ namespace PI_zadaca3
             ((System.ComponentModel.ISupportInitialize)(this.noviPaketSlika)).EndInit();
             this.grupnaKutija2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pregledPaketaSlika)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +221,8 @@ namespace PI_zadaca3
         private System.Windows.Forms.Button pregledatiPaketeGumb;
         private System.Windows.Forms.PictureBox pregledPaketaSlika;
         private System.Windows.Forms.LinkLabel odjavaLabel;
+        private System.Windows.Forms.ToolTip pocetniOdabirToolTip;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pomocPictureBox;
     }
 }

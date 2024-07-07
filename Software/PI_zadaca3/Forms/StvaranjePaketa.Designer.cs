@@ -29,10 +29,13 @@ namespace PI_zadaca3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StvaranjePaketa));
             this.nazadLabel = new System.Windows.Forms.LinkLabel();
             this.imePaketaLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.odjavaLabel = new System.Windows.Forms.LinkLabel();
+            this.izradaNovogPaketaLabel = new System.Windows.Forms.Label();
             this.napomenaLabel = new System.Windows.Forms.Label();
             this.noviPaketpictureBox = new System.Windows.Forms.PictureBox();
             this.myDocLabel = new System.Windows.Forms.Label();
@@ -48,10 +51,11 @@ namespace PI_zadaca3
             this.opisPaketaRichTextBox = new System.Windows.Forms.RichTextBox();
             this.napomenaPaketaRichTextBox = new System.Windows.Forms.RichTextBox();
             this.euroLabel = new System.Windows.Forms.Label();
-            this.izradaNovogPaketaLabel = new System.Windows.Forms.Label();
-            this.odjavaLabel = new System.Windows.Forms.LinkLabel();
+            this.stvaranjePaketaToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pomocPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noviPaketpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // nazadLabel
@@ -78,6 +82,7 @@ namespace PI_zadaca3
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.pomocPictureBox);
             this.panel1.Controls.Add(this.odjavaLabel);
             this.panel1.Controls.Add(this.izradaNovogPaketaLabel);
             this.panel1.Controls.Add(this.napomenaLabel);
@@ -87,6 +92,29 @@ namespace PI_zadaca3
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 96);
             this.panel1.TabIndex = 10;
+            // 
+            // odjavaLabel
+            // 
+            this.odjavaLabel.AutoSize = true;
+            this.odjavaLabel.Location = new System.Drawing.Point(8, 16);
+            this.odjavaLabel.Name = "odjavaLabel";
+            this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
+            this.odjavaLabel.TabIndex = 21;
+            this.odjavaLabel.TabStop = true;
+            this.odjavaLabel.Text = "Odjava";
+            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
+            // 
+            // izradaNovogPaketaLabel
+            // 
+            this.izradaNovogPaketaLabel.AutoSize = true;
+            this.izradaNovogPaketaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.izradaNovogPaketaLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.izradaNovogPaketaLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.izradaNovogPaketaLabel.Location = new System.Drawing.Point(312, 72);
+            this.izradaNovogPaketaLabel.Name = "izradaNovogPaketaLabel";
+            this.izradaNovogPaketaLabel.Size = new System.Drawing.Size(156, 22);
+            this.izradaNovogPaketaLabel.TabIndex = 20;
+            this.izradaNovogPaketaLabel.Text = "Izrada novog paketa";
             // 
             // napomenaLabel
             // 
@@ -171,9 +199,9 @@ namespace PI_zadaca3
             this.stvoriPaketGumb.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.stvoriPaketGumb.Location = new System.Drawing.Point(344, 400);
             this.stvoriPaketGumb.Name = "stvoriPaketGumb";
-            this.stvoriPaketGumb.Size = new System.Drawing.Size(80, 32);
+            this.stvoriPaketGumb.Size = new System.Drawing.Size(104, 32);
             this.stvoriPaketGumb.TabIndex = 18;
-            this.stvoriPaketGumb.Text = "Stvori";
+            this.stvoriPaketGumb.Text = "Stvori paket";
             this.stvoriPaketGumb.UseVisualStyleBackColor = false;
             this.stvoriPaketGumb.Click += new System.EventHandler(this.stvoriPaketGumb_Click);
             // 
@@ -236,28 +264,15 @@ namespace PI_zadaca3
             this.euroLabel.TabIndex = 24;
             this.euroLabel.Text = "€";
             // 
-            // izradaNovogPaketaLabel
+            // pomocPictureBox
             // 
-            this.izradaNovogPaketaLabel.AutoSize = true;
-            this.izradaNovogPaketaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.izradaNovogPaketaLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.izradaNovogPaketaLabel.ForeColor = System.Drawing.SystemColors.Info;
-            this.izradaNovogPaketaLabel.Location = new System.Drawing.Point(312, 72);
-            this.izradaNovogPaketaLabel.Name = "izradaNovogPaketaLabel";
-            this.izradaNovogPaketaLabel.Size = new System.Drawing.Size(156, 22);
-            this.izradaNovogPaketaLabel.TabIndex = 20;
-            this.izradaNovogPaketaLabel.Text = "Izrada novog paketa";
-            // 
-            // odjavaLabel
-            // 
-            this.odjavaLabel.AutoSize = true;
-            this.odjavaLabel.Location = new System.Drawing.Point(8, 16);
-            this.odjavaLabel.Name = "odjavaLabel";
-            this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
-            this.odjavaLabel.TabIndex = 21;
-            this.odjavaLabel.TabStop = true;
-            this.odjavaLabel.Text = "Odjava";
-            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
+            this.pomocPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pomocPictureBox.Image")));
+            this.pomocPictureBox.Location = new System.Drawing.Point(736, 8);
+            this.pomocPictureBox.Name = "pomocPictureBox";
+            this.pomocPictureBox.Size = new System.Drawing.Size(52, 48);
+            this.pomocPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pomocPictureBox.TabIndex = 25;
+            this.pomocPictureBox.TabStop = false;
             // 
             // StvaranjePaketa
             // 
@@ -285,6 +300,7 @@ namespace PI_zadaca3
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noviPaketpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,5 +328,7 @@ namespace PI_zadaca3
         private System.Windows.Forms.Label euroLabel;
         private System.Windows.Forms.Label izradaNovogPaketaLabel;
         private System.Windows.Forms.LinkLabel odjavaLabel;
+        private System.Windows.Forms.ToolTip stvaranjePaketaToolTip;
+        private System.Windows.Forms.PictureBox pomocPictureBox;
     }
 }

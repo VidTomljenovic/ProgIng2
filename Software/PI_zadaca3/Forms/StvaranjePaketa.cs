@@ -12,6 +12,8 @@ namespace PI_zadaca3
         public StvaranjePaketa()
         {
             InitializeComponent();
+            pomocPictureBox.MouseHover += pomocPictureBox_MouseHover;
+            pomocPictureBox.MouseLeave += pomocPictureBox_MouseLeave;
         }
 
         private void nazadLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -80,6 +82,15 @@ namespace PI_zadaca3
             PocetniOdabir pocetniOdabir = new PocetniOdabir();
             pocetniOdabir.Show();
             this.Hide();
+        }
+        private void pomocPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            Tooltip.ShowTooltip(pomocPictureBox, "Ovdje možeš izraditi poptuno novi paket usluga. Pripazi, obavezna polja označena su *, a cijena paketa izražena je u valuti EUR, cijeli broj.");
+        }
+
+        private void pomocPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            Tooltip.HideTooltip(pomocPictureBox);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PI_zadaca3.Modules;
 
 namespace PI_zadaca3
 {
@@ -28,6 +29,8 @@ namespace PI_zadaca3
         public PocetniOdabir()
         {
             InitializeComponent();
+            pomocPictureBox.MouseHover += pomocPictureBox_MouseHover;
+            pomocPictureBox.MouseLeave += pomocPictureBox_MouseLeave;
         }
 
         private void pregledPaketaSlika_Click(object sender, EventArgs e)
@@ -54,5 +57,16 @@ namespace PI_zadaca3
         {
             Application.Exit();
         }
+
+        private void pomocPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            Tooltip.ShowTooltip(pomocPictureBox, "Izaberi želiš li izraditi potpuno novi paket usluga ili pak pregledati postojeće (njih možeš ujedno i urediti ili obrisati.");
+        }
+
+        private void pomocPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            Tooltip.HideTooltip(pomocPictureBox);
+        }
+
     }
 }

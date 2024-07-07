@@ -21,6 +21,8 @@ namespace PI_zadaca3
         public PregledPaketa()
         {
             InitializeComponent();
+            pomocPictureBox.MouseHover += pomocPictureBox_MouseHover;
+            pomocPictureBox.MouseLeave += pomocPictureBox_MouseLeave;
         }
 
         private void nazadLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -71,7 +73,7 @@ namespace PI_zadaca3
         {
             Application.Exit();
         }
-        
+
         private void odaberiPaketButton_Click(object sender, EventArgs e)
         {
             if (prikazPaketadataGridView.SelectedRows.Count > 0)
@@ -85,6 +87,15 @@ namespace PI_zadaca3
                 // Opcionalno: Sakrijte trenutnu formu
                 this.Hide();
             }
+        }
+        private void pomocPictureBox_MouseHover(object sender, EventArgs e)
+        {
+            Tooltip.ShowTooltip(pomocPictureBox, "Ovdje možeš pregledati sve trenutno dostupne pakete, izvršiti pretragu prema imenu te odabrati jedan od ponuđenih i nastaviti na njegovo uređivanje.");
+        }
+
+        private void pomocPictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            Tooltip.HideTooltip(pomocPictureBox);
         }
     }
 }

@@ -29,6 +29,7 @@ namespace PI_zadaca3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PregledPaketa));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,10 +51,14 @@ namespace PI_zadaca3
             this.cijenaPaketaLabel = new System.Windows.Forms.Label();
             this.pretragaPaketalabel = new System.Windows.Forms.Label();
             this.povecaloPictureBox = new System.Windows.Forms.PictureBox();
+            this.pregledPaketaToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.pomocPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.slikaPaketa)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prikazPaketadataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.povecaloPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // odaberiPaketButton
@@ -106,6 +111,8 @@ namespace PI_zadaca3
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pomocPictureBox);
             this.panel1.Controls.Add(this.pregledPaketaLabel);
             this.panel1.Controls.Add(this.myDocLabel);
             this.panel1.Controls.Add(this.slikaPaketa);
@@ -253,6 +260,25 @@ namespace PI_zadaca3
             this.povecaloPictureBox.TabIndex = 17;
             this.povecaloPictureBox.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(736, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "(hover me)";
+            // 
+            // pomocPictureBox
+            // 
+            this.pomocPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pomocPictureBox.Image")));
+            this.pomocPictureBox.Location = new System.Drawing.Point(736, 8);
+            this.pomocPictureBox.Name = "pomocPictureBox";
+            this.pomocPictureBox.Size = new System.Drawing.Size(52, 48);
+            this.pomocPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pomocPictureBox.TabIndex = 23;
+            this.pomocPictureBox.TabStop = false;
+            // 
             // PregledPaketa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +307,7 @@ namespace PI_zadaca3
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prikazPaketadataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.povecaloPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,6 +332,9 @@ namespace PI_zadaca3
         private System.Windows.Forms.Label pretragaPaketalabel;
         private System.Windows.Forms.PictureBox povecaloPictureBox;
         private System.Windows.Forms.Label pregledPaketaLabel;
+        private System.Windows.Forms.ToolTip pregledPaketaToolTip;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pomocPictureBox;
     }
 }
 

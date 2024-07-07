@@ -29,22 +29,27 @@ namespace PI_zadaca3.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetaljiPaketa));
             this.detaljiPaketadataGridView = new System.Windows.Forms.DataGridView();
             this.obrisiButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.odjavaLabel = new System.Windows.Forms.LinkLabel();
             this.detaljiPaketaLabel = new System.Windows.Forms.Label();
             this.myDocLabel = new System.Windows.Forms.Label();
             this.slikaPaketa = new System.Windows.Forms.PictureBox();
             this.nazadLabel = new System.Windows.Forms.LinkLabel();
-            this.odjavaLabel = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
             this.spremiPromjeneButton = new System.Windows.Forms.Button();
+            this.pomocPictureBox = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.detaljiPaketadataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slikaPaketa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // detaljiPaketadataGridView
@@ -69,7 +74,7 @@ namespace PI_zadaca3.Forms
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.detaljiPaketadataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.detaljiPaketadataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.detaljiPaketadataGridView.Location = new System.Drawing.Point(48, 128);
+            this.detaljiPaketadataGridView.Location = new System.Drawing.Point(16, 120);
             this.detaljiPaketadataGridView.Name = "detaljiPaketadataGridView";
             this.detaljiPaketadataGridView.Size = new System.Drawing.Size(696, 120);
             this.detaljiPaketadataGridView.TabIndex = 0;
@@ -79,7 +84,7 @@ namespace PI_zadaca3.Forms
             // 
             this.obrisiButton.BackColor = System.Drawing.SystemColors.Desktop;
             this.obrisiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.obrisiButton.Location = new System.Drawing.Point(344, 408);
+            this.obrisiButton.Location = new System.Drawing.Point(344, 400);
             this.obrisiButton.Name = "obrisiButton";
             this.obrisiButton.Size = new System.Drawing.Size(120, 32);
             this.obrisiButton.TabIndex = 1;
@@ -90,7 +95,9 @@ namespace PI_zadaca3.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pomocPictureBox);
             this.panel1.Controls.Add(this.odjavaLabel);
             this.panel1.Controls.Add(this.detaljiPaketaLabel);
             this.panel1.Controls.Add(this.myDocLabel);
@@ -99,6 +106,30 @@ namespace PI_zadaca3.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 96);
             this.panel1.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(440, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "label1";
+            // 
+            // odjavaLabel
+            // 
+            this.odjavaLabel.AutoSize = true;
+            this.odjavaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.odjavaLabel.Location = new System.Drawing.Point(8, 8);
+            this.odjavaLabel.Name = "odjavaLabel";
+            this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
+            this.odjavaLabel.TabIndex = 9;
+            this.odjavaLabel.TabStop = true;
+            this.odjavaLabel.Text = "Odjava";
+            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
             // 
             // detaljiPaketaLabel
             // 
@@ -145,41 +176,37 @@ namespace PI_zadaca3.Forms
             this.nazadLabel.Text = "Nazad";
             this.nazadLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.nazadLabel_LinkClicked);
             // 
-            // odjavaLabel
-            // 
-            this.odjavaLabel.AutoSize = true;
-            this.odjavaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.odjavaLabel.Location = new System.Drawing.Point(8, 8);
-            this.odjavaLabel.Name = "odjavaLabel";
-            this.odjavaLabel.Size = new System.Drawing.Size(41, 13);
-            this.odjavaLabel.TabIndex = 9;
-            this.odjavaLabel.TabStop = true;
-            this.odjavaLabel.Text = "Odjava";
-            this.odjavaLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.odjavaLabel_LinkClicked);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(440, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "label1";
-            // 
             // spremiPromjeneButton
             // 
             this.spremiPromjeneButton.BackColor = System.Drawing.SystemColors.HotTrack;
             this.spremiPromjeneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spremiPromjeneButton.Location = new System.Drawing.Point(608, 256);
+            this.spremiPromjeneButton.Location = new System.Drawing.Point(336, 360);
             this.spremiPromjeneButton.Name = "spremiPromjeneButton";
             this.spremiPromjeneButton.Size = new System.Drawing.Size(136, 32);
             this.spremiPromjeneButton.TabIndex = 9;
             this.spremiPromjeneButton.Text = "Spremi promjene";
             this.spremiPromjeneButton.UseVisualStyleBackColor = false;
             this.spremiPromjeneButton.Click += new System.EventHandler(this.spremiPromjeneButton_Click);
+            // 
+            // pomocPictureBox
+            // 
+            this.pomocPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pomocPictureBox.Image")));
+            this.pomocPictureBox.Location = new System.Drawing.Point(736, 8);
+            this.pomocPictureBox.Name = "pomocPictureBox";
+            this.pomocPictureBox.Size = new System.Drawing.Size(52, 48);
+            this.pomocPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pomocPictureBox.TabIndex = 10;
+            this.pomocPictureBox.TabStop = false;
+            this.pomocPictureBox.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(736, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "(hover me)";
             // 
             // DetaljiPaketa
             // 
@@ -199,6 +226,7 @@ namespace PI_zadaca3.Forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slikaPaketa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pomocPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +244,8 @@ namespace PI_zadaca3.Forms
         private System.Windows.Forms.LinkLabel odjavaLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button spremiPromjeneButton;
+        private System.Windows.Forms.PictureBox pomocPictureBox;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label2;
     }
 }

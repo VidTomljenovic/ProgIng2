@@ -14,6 +14,8 @@ namespace PI_zadaca3.Forms
         {
             InitializeComponent();
             detaljiPaketaId = id;
+            pomocPictureBox.MouseHover += pictureBox1_MouseHover;
+            pomocPictureBox.MouseLeave += pictureBox1_MouseLeave;
         }
 
         private void DetaljiPaketa_Load(object sender, EventArgs e)
@@ -116,6 +118,16 @@ namespace PI_zadaca3.Forms
             PregledPaketa pregledPaketaForm = new PregledPaketa();
             pregledPaketaForm.Show();
             this.Hide();
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            Tooltip.ShowTooltip(pomocPictureBox, "Ovdje možeš mijenjati ili obrisati svoj paket!");
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            Tooltip.HideTooltip(pomocPictureBox);
         }
     }
 }

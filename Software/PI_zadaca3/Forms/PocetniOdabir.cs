@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PI_zadaca3.Modules;
 
 namespace PI_zadaca3
 {
-
     public partial class PocetniOdabir : Form
     {
-        void NavigacijaPregledPaketa() {
+        void NavigacijaPregledPaketa()
+        {
             PregledPaketa pregledPaketa = new PregledPaketa();
             pregledPaketa.Show();
             this.Hide();
         }
+
         void NavigacijaStvaranjePaketa()
         {
             StvaranjePaketa stvaranjePaketa = new StvaranjePaketa();
@@ -67,6 +61,5 @@ namespace PI_zadaca3
         {
             Tooltip.HideTooltip(pomocPictureBox);
         }
-
     }
 }

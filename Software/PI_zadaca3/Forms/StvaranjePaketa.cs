@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using DBLayer;
 using PI_zadaca3.Modules;
-using PI_zadaca3.Repositories;
 
 namespace PI_zadaca3
 {
@@ -55,7 +53,6 @@ namespace PI_zadaca3
         {
             string sql = "INSERT INTO PaketUsluga (ImePaketa, OpisPaketa, CijenaPaketa, NapomenaPaketa) " +
                          "VALUES (@ImePaketa, @OpisPaketa, @CijenaPaketa, @NapomenaPaketa)";
-
             string connectionString = Conn.GetConnectionString();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -64,11 +61,9 @@ namespace PI_zadaca3
                 command.Parameters.AddWithValue("@OpisPaketa", paket.OpisPaketa);
                 command.Parameters.AddWithValue("@CijenaPaketa", paket.CijenaPaketa);
                 command.Parameters.AddWithValue("@NapomenaPaketa", paket.NapomenaPaketa);
-
                 connection.Open();
                 command.ExecuteNonQuery();
             }
-
             MessageBox.Show("Paket uspješno dodan!");
         }
 
@@ -83,11 +78,11 @@ namespace PI_zadaca3
             pocetniOdabir.Show();
             this.Hide();
         }
+
         private void pomocPictureBox_MouseHover(object sender, EventArgs e)
         {
             Tooltip.ShowTooltip(pomocPictureBox, "Ovdje možeš izraditi poptuno novi paket usluga. Pripazi, obavezna polja označena su *, a cijena paketa izražena je u valuti EUR, cijeli broj.");
         }
-
         private void pomocPictureBox_MouseLeave(object sender, EventArgs e)
         {
             Tooltip.HideTooltip(pomocPictureBox);

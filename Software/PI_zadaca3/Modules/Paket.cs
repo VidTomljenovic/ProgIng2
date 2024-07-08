@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PI_zadaca3.Modules
+﻿namespace PI_zadaca3.Modules
 {
+    /// Paket usluga sa svojim parametrima
     public class Paket
     {
         public int ID { get; set; }
